@@ -18,4 +18,4 @@
 <li> Add "libmysql.dll", "libcrypto-1_1x64.dll", "libssl-1_1x64.dll" in the folder where your project is located</li> 
   </ul>  
   At last compile and run the project</br></br>
- NOTE: You must have created the databases with names "student_login", "book"and "student_information" each having tables as "login_data", "book_record" and "student_details" respectively to run this code.
+ NOTE: You must have created the databases with names "student_library" having three tables "login_data", "book_record" and "student_details" to run this code.
