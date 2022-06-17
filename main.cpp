@@ -182,9 +182,39 @@ class library{
 					break;
 				}
 				case 3:{
-					
+					cout<<"\n\t\t\tEnter the book number:\t";
+					cin>>booknum;
+					cout<<"\n\t\t\tEnter today's date(YYYY-MM-DD):\t";
+					cin>>date;
+					stringstream ss;
+					ss<<"update book_record set Date='"+date+"' where BookNumber='"+booknum+"'";
+					string query=ss.str();
+					const char* q=query.c_str();
+					int qstate= mysql_query(conn,q);
+					if(!qstate)
+					{
+						cout<<"\n\t\t\tRenewed successfully\n";
+					}
 					break;
 				}
+				case 4:{
+					cout<<"\n\t\t\tEnter the book number:\t";
+					cin>>booknum;
+					stringstream ss;
+					ss<<"delete from book_record where BookNumber='"+booknum+"'";
+					string query=ss.str();
+					const char* q= query.c_str();
+					int qstate= mysql_query(conn,q);
+					if(!qstate)
+					{
+						cout<<"\t\t\tBook returned to library\n";
+					}
+					break;
+				}
+				default:
+					{
+						cout<<"\t\t\tSelect a valid option\n";
+					}
 			}
 		}
 };
